@@ -1,0 +1,12 @@
+[package]
+name = "flyin/admin-panel"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+Trove = "sleitnick/trove@1.1.0"
+Fusion = "elttob/fusion@0.2.0"
+Future = "red-blox/future@^1.0.0"
+Signal = "data-oriented-house/lemonsignal@1.8.1"
+Net = "sleitnick/net@0.2.0"
