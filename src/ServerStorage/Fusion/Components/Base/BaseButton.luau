@@ -1,11 +1,8 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local Fusion = require(ReplicatedStorage.Packages.Fusion)
-local FusionTypes = require(ReplicatedStorage.Packages._Index["elttob_fusion@0.2.0"].fusion.PubTypes)
-local New, Children = Fusion.New, Fusion.Children
 
 export type BaseButtonProps = { 
-    [FusionTypes.SpecialKey]: any?, 
     AnchorPoint: Vector2?, 
     AutoButtonColor: boolean?,
     BackgroundColor3: Color3?, 
@@ -18,11 +15,12 @@ export type BaseButtonProps = {
     FontFace: Font?,
     Name: string?, 
     Position: UDim2?, 
-    Size: UDim2?
+    Size: UDim2?,
+    [Fusion.SpecialKey]: any?   
 }
 
 local function BaseButton(props: BaseButtonProps)
-    return New "TextButton" {
+    return Fusion.New "TextButton" {
         Name = props.Name or "TextButton",
         AutoButtonColor = props.AutoButtonColor or false,
         AnchorPoint = props.AnchorPoint or Vector2.new(0, 0),
@@ -37,7 +35,7 @@ local function BaseButton(props: BaseButtonProps)
         Size = props.Size or UDim2.fromScale(1, 1),
         Position = props.Position or UDim2.fromScale(0, 0),
 
-        [Children] = props[Children] or {}
+        [Fusion.Children] = props.Children
     }
 end
 
