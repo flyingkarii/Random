@@ -1,8 +1,6 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Vide = require(ReplicatedStorage.Packages.Vide)
 
-type select1<T> =(f: (T) -> any) -> T
-
 export type BaseImageButtonProps = Vide.vImageButton
 
 local function BaseImageButton(props: BaseImageButtonProps)
